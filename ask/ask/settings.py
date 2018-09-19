@@ -80,8 +80,11 @@ DATABASES = {
         'NAME': 'qa_db',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': ''
+        'HOST': '',
+        'PORT': '',
+        'OPTIONS': {
+            'sql_mode': 'STRICT_ALL_TABLES',
+        },
     }
 }
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from django.contrib.auth.models import User
 
 
@@ -21,6 +22,9 @@ class Question(models.Model):
     author = models.ForeignKey(User, related_name='question_author', on_delete=models.CASCADE)
     likes = models.ManyToManyField(User)
     objects = QuestionManager()
+
+    def get_absolute_url(self):
+        return reverse('question', args=[self.id])
 
 
 class Answer(models.Model):
