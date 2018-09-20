@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.core.paginator import Paginator
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Question
 from .forms import AskForm, AnswerForm, SignupForm, LoginForm
 
@@ -70,6 +70,9 @@ def login_(request):
             if user is not None:
                 login(request, user)
                 return redirect('index')
+            else:
+                return redirect('login')
+
     else:
         form = LoginForm()
     return render(request, 'qa/login.html', context={'form': form})
