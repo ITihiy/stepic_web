@@ -6,6 +6,9 @@
 </head>
 <body>
     <h1>New questions</h1>
+    {% if request.user.is_authenticated %}
+        <h2>Hello {{ request.user.username }}</h2>
+    {% endif %}
     <ul>
         {% for question in questions %}
         <li><p><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></p></li>

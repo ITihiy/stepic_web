@@ -20,8 +20,8 @@ from qa import views as qa_views
 
 urlpatterns = [
     path('', qa_views.index, name='index'),
-    path('login/', qa_views.test, name='login'),
-    path('signup/', qa_views.test, name='signup'),
+    path('login/', qa_views.login_, name='login'),
+    path('signup/', qa_views.signup, name='signup'),
     path('question/<str:question_id>/', qa_views.question, name='question'),
     path('ask/', qa_views.ask, name='ask'),
     path('popular/', qa_views.popular, name='popular'),
