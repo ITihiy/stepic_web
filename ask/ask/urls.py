@@ -23,7 +23,7 @@ urlpatterns = [
     path('login/', qa_views.test, name='login'),
     path('signup/', qa_views.test, name='signup'),
     path('question/<str:question_id>/', qa_views.question, name='question'),
-    path('ask/', qa_views.test, name='ask'),
+    path('ask/', qa_views.ask, name='ask'),
     path('popular/', qa_views.popular, name='popular'),
     path('new/', qa_views.test, name='new'),
 ]

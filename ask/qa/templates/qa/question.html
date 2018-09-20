@@ -15,5 +15,11 @@
             <li>{{ answer.text }}</li>
         {% endfor %}
     </ul>
+
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_table}}
+    </form>
 </body>
 </html>
